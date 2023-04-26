@@ -17,6 +17,6 @@ public class EnemyChaseBehavior : MonoBehaviour
 			return;
 			
 		if (Vector3.Distance(transform.position, GameManager.Player.gameObject.transform.position) < _range)
-			transform.position = Vector3.MoveTowards(transform.position, GameManager.Player.gameObject.transform.position, _speed * Time.deltaTime);
+			transform.position = Vector3.MoveTowards(transform.position, GameManager.Player.gameObject.transform.position, _speed * Time.deltaTime * GameManager.GameSpeedMultiplier);
 	}
 }
