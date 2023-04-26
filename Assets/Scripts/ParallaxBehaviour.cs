@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ParallaxBehaviour : MonoBehaviour
 {
-    float _depth = 1;
+    [SerializeField] private float _depth = 1;
 
     private void Awake()
     {
@@ -22,7 +22,7 @@ public class ParallaxBehaviour : MonoBehaviour
     {
         Vector2 pos = transform.position;
 
-        pos.x -= Time.fixedDeltaTime;
+        pos.x -= Time.fixedDeltaTime / _depth;
 
         transform.position = pos;
     }
