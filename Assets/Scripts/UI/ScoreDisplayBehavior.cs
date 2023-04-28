@@ -7,6 +7,6 @@ public class ScoreDisplayBehavior : MonoBehaviour
 {
     void Update()
     {
-        GetComponent<Text>().text =  "" + GameManager.Score;
+        GetComponent<Text>().text =  "" + GameManager.Instance.Score;
     }
 }

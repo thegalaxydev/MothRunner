@@ -10,12 +10,12 @@ public class TempMovementBehavior : MonoBehaviour
 	{
 		if (Input.GetKey("a") || Input.GetKey("d"))
 		{
-			transform.position += new Vector3(Input.GetAxis("Horizontal"), 0, 0) * _speed * Time.deltaTime * GameManager.GameSpeedMultiplier;
+			transform.position += new Vector3(Input.GetAxis("Horizontal"), 0, 0) * _speed * Time.deltaTime * GameManager.Instance.GameSpeedMultiplier;
 		}
 
 		if (Input.GetKey("w") || Input.GetKey("s"))
 		{
-			transform.position += new Vector3(0, Input.GetAxis("Vertical"), 0) * _speed * Time.deltaTime * GameManager.GameSpeedMultiplier;
+			transform.position += new Vector3(0, Input.GetAxis("Vertical"), 0) * _speed * Time.deltaTime * GameManager.Instance.GameSpeedMultiplier;
 		}
 
 	}
