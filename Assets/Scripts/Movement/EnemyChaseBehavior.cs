@@ -18,6 +18,6 @@ public class EnemyChaseBehavior : MonoBehaviour
 			
 		if (Vector3.Distance(transform.position, GameManager.Instance.Player.transform.position) < _range)
 			transform.position = Vector3.MoveTowards(transform.position, GameManager.Instance.Player.transform.position, 
-				_speed * Time.deltaTime * GameManager.Instance.GameSpeedMultiplier);
+				_speed * Time.deltaTime);
 	}
 }

@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+	[Tooltip("The player object.")]
 	public GameObject Player;
+
+	[Tooltip("The game score.")]
 	public int Score = 0;
-	public float GameSpeedMultiplier = 1;
+
+	public float GameSpeedMultiplier {get; private set;}
 
 	private static GameManager _instance;
 	public static GameManager Instance
@@ -26,27 +30,15 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	[SerializeField]
-	private GameObject _playerReference;
-
 	private float timePassed;
-
-	void Awake()
-	{
-		Player = _playerReference;
-	}
-
 	private void Update() 
 	{
 		timePassed += Time.deltaTime;
 		if (timePassed > 1)
 		{
 			timePassed = 0;
-			
 			if (GameSpeedMultiplier < 5)
 				GameSpeedMultiplier += 0.01f;
-
-			Score += 1 * (int)GameSpeedMultiplier;
 		}
 
 		if (Input.GetKeyDown(KeyCode.Escape))
