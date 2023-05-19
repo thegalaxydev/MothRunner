@@ -28,7 +28,7 @@ public class EnemyPatrolBehavior : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		transform.position = Vector3.MoveTowards(transform.position, _target, _speed * Time.deltaTime * GameManager.GameSpeedMultiplier);
+		transform.position = Vector3.MoveTowards(transform.position, _target, _speed * Time.deltaTime);
 
 		// check the distance to see if its close enough to move to the next point
 		if (Vector3.Distance(transform.position, _target) < 0.05f)
